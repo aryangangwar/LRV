@@ -1,4 +1,4 @@
-package com.senpai.lrv;
+package com.sujal.lrv;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -39,18 +39,16 @@ public class ScoutAdapter extends RecyclerView.Adapter<ScoutAdapter.ScoutHolder>
     }
 
     public class ScoutHolder extends RecyclerView.ViewHolder {
-        private TextView txtName, txtRank, txtKill;
+        private TextView txtName, txtPhone;
         public ScoutHolder(@NonNull View itemView) {
             super(itemView);
             txtName = itemView.findViewById(R.id.txtName);
-            txtRank = itemView.findViewById(R.id.txtRank);
-            txtKill = itemView.findViewById(R.id.txtKill);
+            txtPhone = itemView.findViewById(R.id.txtPhone);
         }
 
         public void setDetails(Scout scout) {
             txtName.setText(scout.getName());
-            txtRank.setText(String.format("Rank: %s", scout.getRank()));
-            txtKill.setText(String.format("kill: %s", scout.getKillCount()));
+            txtPhone.setText(String.format("Phone: %s", scout.getPhone()));
         }
     }
 }

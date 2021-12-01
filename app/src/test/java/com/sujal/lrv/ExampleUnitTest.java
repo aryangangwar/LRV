@@ -1,4 +1,4 @@
-package com.senpai.lrv;
+package com.sujal.lrv;
 
 import org.junit.Test;
 

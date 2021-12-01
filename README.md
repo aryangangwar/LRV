@@ -64,32 +64,40 @@ create custom layout for list item
 ```
 ### Create Data class for list items
 Data/Modal class contains data structure for item in list 
-> Scout.java 
+> Scout.java
+
 ```java
-package com.senpai.lrv;
+package com.sujal.lrv;
 
 public class Scout {
     private String Name, Rank, KillCount;
+
     public Scout(String name, String rank, String killCount) {
         Name = name;
         Rank = rank;
         KillCount = killCount;
     }
+
     public String getName() {
         return Name;
     }
+
     public void setName(String name) {
         Name = name;
     }
+
     public String getRank() {
         return Rank;
     }
+
     public void setRank(String rank) {
         Rank = rank;
     }
+
     public String getKillCount() {
         return KillCount;
     }
+
     public void setKillCount(String killCount) {
         KillCount = killCount;
     }
@@ -99,8 +107,9 @@ public class Scout {
 ### Create Custom Adapter
 following is simple structure for Custom Adapter
 > ScoutAdapter.java
+
 ```java
-package com.senpai.lrv;
+package com.sujal.lrv;
 
 import android.view.View;
 import android.view.ViewGroup;
@@ -137,8 +146,9 @@ public class ScoutAdapter extends RecyclerView.Adapter<ScoutAdapter.ScoutHolder>
 
 * * *
 >ScoutAdapter.java
+
 ```java
-package com.senpai.lrv;
+package com.sujal.lrv;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -163,7 +173,7 @@ public class ScoutAdapter extends RecyclerView.Adapter<ScoutAdapter.ScoutHolder>
     @NonNull
     @Override
     public ScoutHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_row,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_row, parent, false);
         return new ScoutHolder(view);
     }
 
@@ -180,6 +190,7 @@ public class ScoutAdapter extends RecyclerView.Adapter<ScoutAdapter.ScoutHolder>
 
     public class ScoutHolder extends RecyclerView.ViewHolder {
         private TextView txtName, txtRank, txtKill;
+
         public ScoutHolder(@NonNull View itemView) {
             super(itemView);
             txtName = itemView.findViewById(R.id.txtName);
@@ -189,8 +200,8 @@ public class ScoutAdapter extends RecyclerView.Adapter<ScoutAdapter.ScoutHolder>
 
         public void setDetails(Scout scout) {
             txtName.setText(scout.getName());
-            txtRank.setText("Rank: "+scout.getRank());
-            txtKill.setText("Rank: "+scout.getKillCount());
+            txtRank.setText("Rank: " + scout.getRank());
+            txtKill.setText("Rank: " + scout.getKillCount());
         }
     }
 }
@@ -253,13 +264,16 @@ private void createList() {
    ```
 
 > Complete MainActivity.java
+
 ```java
-package com.senpai.lrv;
+package com.sujal.lrv;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -281,22 +295,22 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.scout_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         scoutArrayList = new ArrayList<>();
-        adapter = new ScoutAdapter(this,scoutArrayList);
+        adapter = new ScoutAdapter(this, scoutArrayList);
         recyclerView.setAdapter(adapter);
         createList();
     }
 
     private void createList() {
         //data to be shown in list
-        scoutArrayList.add(new Scout( "Eren Jaeger" ,"Unranked" , "22" ));
-        scoutArrayList.add(new Scout ( "Mikasa Ackermann" ,"Unranked" , "12" ) );
-        scoutArrayList.add(new Scout ( "Armin Arlelt" ,"Unranked" , "0" ) );
-        scoutArrayList.add(new Scout ( "Erwin Smith " , "Commander" , "Unknown" ) );
-        scoutArrayList.add(new Scout ( "Levi Ackermann" , "Squad Captain" ,"~58" ) );
-        scoutArrayList.add(new Scout ( "Hange Zoe" , "Commander" , "Unknown") );
-        scoutArrayList.add(new Scout ( "Jean Kirschtein" , "Unranked" , "1" )	);
-        scoutArrayList.add(new Scout ("Conny Springer", "Unranked" , "Unknown")	);
-        scoutArrayList.add(new Scout ("Sasha Braus","Unranked","1")	);
+        scoutArrayList.add(new Scout("Eren Jaeger", "Unranked", "22"));
+        scoutArrayList.add(new Scout("Mikasa Ackermann", "Unranked", "12"));
+        scoutArrayList.add(new Scout("Armin Arlelt", "Unranked", "0"));
+        scoutArrayList.add(new Scout("Erwin Smith ", "Commander", "Unknown"));
+        scoutArrayList.add(new Scout("Levi Ackermann", "Squad Captain", "~58"));
+        scoutArrayList.add(new Scout("Hange Zoe", "Commander", "Unknown"));
+        scoutArrayList.add(new Scout("Jean Kirschtein", "Unranked", "1"));
+        scoutArrayList.add(new Scout("Conny Springer", "Unranked", "Unknown"));
+        scoutArrayList.add(new Scout("Sasha Braus", "Unranked", "1"));
 
     }
 }

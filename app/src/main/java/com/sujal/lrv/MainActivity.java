@@ -1,4 +1,4 @@
-package com.senpai.lrv;
+package com.sujal.lrv;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -35,15 +35,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void createList() {
         //data to be shown in list
-        scoutArrayList.add(new Scout( "Eren Jaeger" ,"Unranked" , "22" ));
-        scoutArrayList.add(new Scout ( "Mikasa Ackermann" ,"Unranked" , "12" ) );
-        scoutArrayList.add(new Scout ( "Armin Arlelt" ,"Unranked" , "0" ) );
-        scoutArrayList.add(new Scout ( "Erwin Smith " , "Commander" , "Unknown" ) );
-        scoutArrayList.add(new Scout ( "Levi Ackermann" , "Squad Captain" ,"~58" ) );
-        scoutArrayList.add(new Scout ( "Hange Zoe" , "Commander" , "Unknown") );
-        scoutArrayList.add(new Scout ( "Jean Kirschtein" , "Unranked" , "1" )	);
-        scoutArrayList.add(new Scout ("Conny Springer", "Unranked" , "Unknown")	);
-        scoutArrayList.add(new Scout ("Sasha Braus","Unranked","1")	);
+        scoutArrayList.add(new Scout( "Eren Jaeger" ,"123456789"));
+        scoutArrayList.add(new Scout ( "Mikasa Ackermann" ,"123456789" ) );
+        scoutArrayList.add(new Scout ( "Armin Arlelt" ,"123456789" ) );
+        scoutArrayList.add(new Scout ( "Erwin Smith " , "123456789" ) );
+        scoutArrayList.add(new Scout ( "Levi Ackermann" , "123456789"  ) );
+        scoutArrayList.add(new Scout ( "Hange Zoe" , "123456789" ) );
+        scoutArrayList.add(new Scout ( "Jean Kirschtein" , "123456789")	);
+        scoutArrayList.add(new Scout ("Conny Springer", "123456789" )	);
+        scoutArrayList.add(new Scout ("Sasha Bras","123456789")	);
 
     }
 }
